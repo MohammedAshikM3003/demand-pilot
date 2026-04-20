@@ -12,6 +12,7 @@ import Uploads from './frontend/Uploads'
 import Forecasts from './frontend/Forecasts'
 import Alerts from './frontend/Alerts'
 import Profile from './frontend/Profile'
+import Supplychain from './frontend/Supplychain'
 
 const AUTH_KEY = 'demandpilot-authenticated'
 
@@ -41,7 +42,7 @@ function App() {
       <Route path="/uploads" element={<ProtectedRoute><Uploads /></ProtectedRoute>} />
       <Route path="/forecasts" element={<ProtectedRoute><Forecasts /></ProtectedRoute>} />
       <Route path="/alerts" element={<ProtectedRoute><Alerts /></ProtectedRoute>} />
-      <Route path="/supply-chain" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+      <Route path="/supply-chain" element={<ProtectedRoute><Supplychain /></ProtectedRoute>} />
       <Route path="/analytics" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
       <Route path="/demand-pilot" element={<ProtectedRoute><DemandPilot /></ProtectedRoute>} />
       <Route path="/settings" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
