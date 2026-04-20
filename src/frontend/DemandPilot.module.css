@@ -14,13 +14,15 @@
 }
 
 .page {
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   background: #f8f9fa;
 }
 
 .main {
   margin-left: 84px;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -39,6 +41,10 @@
   background: rgba(248, 249, 250, 0.82);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid rgba(197, 197, 218, 0.28);
+}
+
+.page:has(aside:hover) .topbar {
+  z-index: 30;
 }
 
 .topbarLeft,
@@ -447,8 +453,15 @@
 }
 
 @media (max-width: 960px) {
+  .page {
+    height: auto;
+    overflow: visible;
+  }
+
   .main {
     margin-left: 0;
+    height: auto;
+    overflow: visible;
   }
 
   .topbar {

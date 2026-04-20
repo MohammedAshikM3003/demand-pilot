@@ -7,7 +7,8 @@
 }
 
 .page {
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   background: #f8f9fa;
   color: #191c1d;
   font-family: 'Inter', sans-serif;
@@ -15,7 +16,8 @@
 
 .main {
   margin-left: 84px;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .topbar {
@@ -107,9 +109,12 @@
 }
 
 .content {
-  padding: 88px 24px 28px;
+  margin-top: 64px;
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 24px 24px 28px;
   width: 100%;
-  margin: 0;
 }
 
 .headBlock {
@@ -462,6 +467,13 @@ tbody tr:hover {
 @media (max-width: 960px) {
   .main {
     margin-left: 0;
+    height: auto;
+    overflow: visible;
+  }
+
+  .page {
+    height: auto;
+    overflow: visible;
   }
 
   .topbar {
@@ -490,6 +502,9 @@ tbody tr:hover {
   }
 
   .content {
+    margin-top: 0;
+    height: auto;
+    overflow: visible;
     padding: 124px 14px 18px;
   }
 

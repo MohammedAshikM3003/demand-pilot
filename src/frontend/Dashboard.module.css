@@ -13,6 +13,28 @@
   font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
 }
 
+/* Custom Scrollbar Styling */
+:global(::-webkit-scrollbar) {
+  width: 10px;
+  height: 10px;
+}
+
+:global(::-webkit-scrollbar-track) {
+  background: transparent;
+}
+
+:global(::-webkit-scrollbar-thumb) {
+  background-color: #0070EA;
+  border-radius: 5px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+
+:global(::-webkit-scrollbar-thumb:hover) {
+  background-color: #0056C0;
+  background-clip: padding-box;
+}
+
 .page {
   display: flex;
   min-height: 100vh;
@@ -23,6 +45,9 @@
   flex: 1;
   min-width: 0;
   margin-left: 84px;
+  height: 100vh;
+  overflow: hidden;
+  background: #ffffff;
 }
 
 .topbar {
@@ -135,6 +160,9 @@
   padding: 24px;
   display: grid;
   gap: 22px;
+  height: calc(100vh - 72px);
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .headlineRow {
@@ -440,7 +468,8 @@
   display: grid;
   gap: 8px;
   max-height: 430px;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .urgentItem {
@@ -661,6 +690,13 @@
 
   .main {
     margin-left: 0;
+    height: auto;
+    overflow: visible;
+  }
+
+  .content {
+    height: auto;
+    overflow: visible;
   }
 
   .menuToggle {

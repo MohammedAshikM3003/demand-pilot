@@ -15,7 +15,13 @@
   overflow-x: hidden;
   overscroll-behavior: contain;
   z-index: 35;
-  transition: width 0.24s ease, transform 0.24s ease;
+  transition:
+    width 0.32s ease,
+    transform 0.24s ease,
+    padding 0.32s ease,
+    background-color 0.24s ease,
+    border-color 0.24s ease;
+  will-change: width, transform, padding;
 }
 
 .sidebarHeader {
@@ -29,7 +35,10 @@
   display: flex;
   align-items: center;
   min-height: 36px;
-  transition: opacity 0.2s ease;
+  overflow: hidden;
+  opacity: 1;
+  max-width: 180px;
+  transition: opacity 0.24s ease, max-width 0.32s ease, transform 0.24s ease;
 }
 
 .backdrop {
@@ -56,6 +65,12 @@
   place-items: center;
   background: linear-gradient(135deg, #0a2eff 0%, #0070ea 100%);
   color: #fff;
+}
+
+.brandImage {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
 }
 
 .brandTitle {
@@ -85,11 +100,15 @@
   color: #5f6677;
   font-size: 0.9rem;
   font-weight: 600;
-  transition: 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.24s ease;
 }
 
 .menuLabel {
   white-space: nowrap;
+  overflow: hidden;
+  max-width: 180px;
+  opacity: 1;
+  transition: opacity 0.24s ease, max-width 0.32s ease, transform 0.24s ease;
 }
 
 .menuItem:hover {
@@ -141,6 +160,29 @@
 
 .settingsLabel {
   white-space: nowrap;
+  overflow: hidden;
+  max-width: 140px;
+  opacity: 1;
+  transition: opacity 0.24s ease, max-width 0.32s ease, transform 0.24s ease;
+}
+
+.profileAvatar {
+  width: 22px;
+  height: 22px;
+  border-radius: 9999px;
+  display: grid;
+  place-items: center;
+  background: #cfd8e8;
+  color: #24324a;
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.settingsButtonActive .profileAvatar {
+  background: #0a2eff;
+  color: #fff;
 }
 
 .logoutButton {
@@ -166,6 +208,10 @@
 
 .logoutLabel {
   white-space: nowrap;
+  overflow: hidden;
+  max-width: 140px;
+  opacity: 1;
+  transition: opacity 0.24s ease, max-width 0.32s ease, transform 0.24s ease;
 }
 
 .icon {
@@ -194,7 +240,9 @@
 
 .collapsed .brandText,
 .collapsed .menuLabel {
-  display: none;
+  max-width: 0;
+  opacity: 0;
+  transform: translateX(-6px);
 }
 
 .collapsed .menuItem {
@@ -214,7 +262,9 @@
 
 .collapsed .logoutLabel,
 .collapsed .settingsLabel {
-  display: none;
+  max-width: 0;
+  opacity: 0;
+  transform: translateX(-6px);
 }
 
 @media (max-width: 960px) {
@@ -243,7 +293,9 @@
   .collapsed .menuLabel,
   .collapsed .settingsLabel,
   .collapsed .logoutLabel {
-    display: initial;
+    max-width: 180px;
+    opacity: 1;
+    transform: none;
   }
 
   .collapsed .menuItem {

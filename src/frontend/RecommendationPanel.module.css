@@ -7,7 +7,8 @@
 }
 
 .page {
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   background:
     radial-gradient(circle at top right, rgba(10, 46, 255, 0.08), transparent 28%),
     radial-gradient(circle at left top, rgba(0, 112, 234, 0.08), transparent 24%),
@@ -18,7 +19,8 @@
 
 .main {
   margin-left: 84px;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
@@ -130,6 +132,9 @@
 
 .content {
   margin-top: 64px;
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+  overflow-x: hidden;
   padding: 28px;
   display: grid;
   gap: 16px;
@@ -407,8 +412,20 @@
 }
 
 @media (max-width: 960px) {
+  .page {
+    height: auto;
+    overflow: visible;
+  }
+
   .main {
     margin-left: 0;
+    height: auto;
+    overflow: visible;
+  }
+
+  .content {
+    height: auto;
+    overflow: visible;
   }
 
   .topbar {

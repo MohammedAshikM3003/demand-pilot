@@ -1,5 +1,9 @@
 # demand-pilot
 
+## GitHub Repository
+
+Project repository: https://github.com/MohammedAshikM3003/demand-pilot.git
+
 ## React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

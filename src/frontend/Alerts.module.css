@@ -6,13 +6,16 @@
 }
 
 .page {
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   background: #f8f9fa;
 }
 
 .topbar {
   position: fixed;
-  inset: 0 0 auto 84px;
+  left: 84px;
+  right: 0;
+  top: 0;
   height: 64px;
   z-index: 40;
   display: flex;
@@ -23,6 +26,10 @@
   background: rgba(248, 249, 250, 0.82);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid rgba(197, 197, 218, 0.28);
+}
+
+.page:has(aside:hover) .topbar {
+  z-index: 30;
 }
 
 .topbarLeft,
@@ -106,12 +113,17 @@
 
 .mainContent {
   margin-left: 84px;
-  padding: 96px 32px 32px;
-  min-height: 100vh;
+  margin-top: 64px;
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 32px;
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(320px, 1fr);
   gap: 32px;
 }
+
+
 
 .leftSection,
 .rightSection {
@@ -559,8 +571,15 @@
 }
 
 @media (max-width: 960px) {
+  .page {
+    height: auto;
+    overflow: visible;
+  }
+
   .topbar {
-    inset: 0 0 auto 0;
+    left: 0;
+    right: 0;
+    top: 0;
     padding: 0 18px;
   }
 
@@ -574,8 +593,17 @@
     display: none;
   }
 
+  .page:has(aside:hover) .topbar,
+  .page:has(aside:hover) .mainContent {
+    left: 0;
+    margin-left: 0;
+  }
+
   .mainContent {
     margin-left: 0;
+    margin-top: 0;
+    height: auto;
+    overflow: visible;
     padding: 88px 18px 24px;
   }
 

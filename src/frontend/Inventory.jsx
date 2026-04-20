@@ -76,26 +76,27 @@ function Inventory() {
           </div>
         </header>
 
-        <section className={styles.hero}>
-          <div>
-            <p className={styles.kicker}>SKU Critical Review</p>
-            <h1>HyperX Cloud II - Red</h1>
-            <div className={styles.heroMeta}>
-              <span className={styles.riskBadge}>
-                <span className={`${styles.icon} material-symbols-outlined`}>warning</span>
-                Critical Risk: Out of stock in 4 days
-              </span>
-              <span className={styles.productId}>Product ID: HX-CL2-RD-004</span>
+        <section className={styles.content}>
+          <section className={styles.hero}>
+            <div>
+              <p className={styles.kicker}>SKU Critical Review</p>
+              <h1>HyperX Cloud II - Red</h1>
+              <div className={styles.heroMeta}>
+                <span className={styles.riskBadge}>
+                  <span className={`${styles.icon} material-symbols-outlined`}>warning</span>
+                  Critical Risk: Out of stock in 4 days
+                </span>
+                <span className={styles.productId}>Product ID: HX-CL2-RD-004</span>
+              </div>
             </div>
-          </div>
 
-          <div className={styles.heroActions}>
-            <button className={styles.secondaryBtn} type="button">Export Analysis</button>
-            <button className={styles.primaryBtn} type="button">Sync ERP</button>
-          </div>
-        </section>
+            <div className={styles.heroActions}>
+              <button className={styles.secondaryBtn} type="button">Export Analysis</button>
+              <button className={styles.primaryBtn} type="button">Sync ERP</button>
+            </div>
+          </section>
 
-        <section className={styles.grid}>
+          <section className={styles.grid}>
           <div className={styles.leftCol}>
             <article className={styles.card}>
               <h3>Risk Diagnostic</h3>
@@ -248,6 +249,7 @@ function Inventory() {
               </div>
             </article>
           </div>
+          </section>
         </section>
       </main>
     </div>

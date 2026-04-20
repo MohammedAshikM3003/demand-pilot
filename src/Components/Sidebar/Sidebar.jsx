@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import styles from './Sidebar.module.css'
 import uploadSidebarIcon from '../../assets/UploadSidebarIcon.svg'
-import alertsIcon from '../../assets/AlertsIcon.svg'
+import alertsIcon from '../../assets/Alertsicon.svg'
 import aiIcon from '../../assets/Aiicon.svg'
+import demandPilotIcon from '../../assets/DemandPiloticon.svg'
 
 const AUTH_KEY = 'demandpilot-authenticated'
 
@@ -14,7 +15,6 @@ const navItems = [
   { label: 'Forecasts', icon: 'trending_up', path: '/forecasts' },
   { label: 'Alerts', imageIcon: alertsIcon, path: '/alerts' },
   { label: 'Supply Chain', icon: 'local_shipping', path: '/supply-chain' },
-  { label: 'Analytics', icon: 'insights', path: '/analytics' },
   { label: 'DemandPilot', imageIcon: aiIcon, path: '/demand-pilot' },
 ]
 
@@ -59,7 +59,7 @@ function Sidebar({ isOpen, onClose }) {
           <div className={styles.sidebarHeader}>
             <div className={styles.brandWrap}>
               <div className={styles.brandIcon}>
-                <span className={`${styles.icon} material-symbols-outlined`}>dataset</span>
+                <img alt="" aria-hidden="true" className={styles.brandImage} src={demandPilotIcon} />
               </div>
               <div className={styles.brandText}>
                 <h2 className={styles.brandTitle}>DemandPilot</h2>
@@ -92,8 +92,8 @@ function Sidebar({ isOpen, onClose }) {
             onClick={onClose}
             to="/settings"
           >
-            <span className={`${styles.icon} material-symbols-outlined`}>settings</span>
-            <span className={styles.settingsLabel}>Settings</span>
+            <span aria-hidden="true" className={styles.profileAvatar}>A</span>
+            <span className={styles.settingsLabel}>Profile</span>
           </NavLink>
 
           <button
