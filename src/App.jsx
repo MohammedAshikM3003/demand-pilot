@@ -1,4 +1,5 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
+import Landing from './landing'
 import Login from './login'
 import Signup from './signup'
 import ForgotPass from './forgotpass'
@@ -31,7 +32,8 @@ function LoginRoute() {
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<LoginRoute />} />
+      <Route path="/" element={<Landing />} />
+      <Route path="/login" element={<LoginRoute />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/forgot-password" element={<ForgotPass />} />
       <Route path="/otp" element={<OtpPage />} />
