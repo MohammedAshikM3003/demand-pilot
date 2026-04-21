@@ -42,6 +42,7 @@ function Sidebar({ isOpen, onClose }) {
   }, [])
 
   const isCollapsed = isDesktop && !isHovered
+
   const sidebarClassName = [
     styles.sidebar,
     isOpen ? styles.open : '',

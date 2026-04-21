@@ -170,6 +170,7 @@
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  margin-top: 5px;
 }
 
 .riskBadge .icon {
@@ -218,9 +219,11 @@
 
 .leftCol {
   grid-column: span 3;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 16px;
-  align-content: start;
+  align-self: stretch;
+  min-height: 100%;
 }
 
 .rightCol {
@@ -244,10 +247,32 @@
   padding: 20px;
 }
 
+.leftCol .card {
+  flex: 1 1 0;
+}
+
+.leftCol .card:first-child {
+  display: flex;
+  flex-direction: column;
+  flex: 0.9 1 0;
+}
+
+.leftCol .card:last-child {
+  flex: 1.1 1 0;
+}
+
+.leftCol .card:first-child .riskItem:last-child {
+  margin-bottom: 0;
+}
+
+.leftCol .card:first-child .riskItem:last-child p {
+  max-width: 220px;
+}
+
 .card h3 {
   margin: 0 0 16px;
   color: #555f74;
-  font-size: 0.74rem;
+  font-size: 0.82rem;
   font-weight: 800;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -264,7 +289,7 @@
 
 .riskItem h4 {
   margin: 0;
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -272,7 +297,7 @@
 .riskItem p {
   margin: 4px 0 0;
   color: #606a7d;
-  font-size: 0.74rem;
+  font-size: 1.05rem;
   line-height: 1.45;
 }
 
@@ -303,7 +328,7 @@
 .sliderBlock label {
   display: flex;
   justify-content: space-between;
-  font-size: 0.69rem;
+  font-size: 0.78rem;
   color: #5f6677;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -331,7 +356,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.84rem;
+  font-size: 0.92rem;
 }
 
 .metricList p + p {
